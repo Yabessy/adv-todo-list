@@ -7,7 +7,7 @@ import {
 
 export default function Card({ up, text, task, completed, percent }: any) {
   return (
-    <div className="w-96 bg-white shadow-sm mt-4 h-24 rounded-md p-2">
+    <div className="w-72 bg-white border shadow-sm mt-4 h-24 rounded-md p-2">
       <h1 className="font-medium text-base">{text}</h1>
       <div className="flex items space-x-2 text-gray-700">
         <InformationCircleIcon className="w-5 mt-1" />

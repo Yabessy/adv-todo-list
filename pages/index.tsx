@@ -9,7 +9,7 @@ import Sidebar from "../components/Sidebar"
 import Todo from "../models/todoModel"
 import connMongoDB from "../utils/mongoDB"
 
-const Home: NextPage = () => {
+const Home: NextPage = ({ quote,newsResults }: any) => {
   // const todos = JSON.parse(todosProps)
   const [title, setTitle] = useState("")
   const [desc, setDesc] = useState("")
@@ -36,16 +36,40 @@ const Home: NextPage = () => {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="flex w-full h-screen bg-slate-50">
+      <main className="flex w-full h-screen bg-white">
         <Sidebar />
-        <div className="flex-[18] flex flex-col">
+        <div className="flex-[10] flex flex-col">
           <Overview />
-          <Motivation />
+          <Motivation quote={quote}/>
         </div>
-        <News />
+        <News newsResults={newsResults}/>
       </main>
     </div>
   )
+}
+
+export async function getServerSideProps() {
+  const url = "https://quotes15.p.rapidapi.com/quotes/random/?language_code=en"
+  const options = {
+    method: "GET",
+    headers: {
+      "X-RapidAPI-Key": "14d0848f86msh16287bbc1ea9b64p1b2babjsn49650ff65d7c",
+      "X-RapidAPI-Host": "quotes15.p.rapidapi.com",
+    },
+  }
+  const res = await fetch(url, options)
+  const data = await res.json()
+
+  const newsResults = await fetch(
+    `https://saurav.tech/NewsAPI/everything/cnn.json`
+  ).then((res) => res.json())
+
+  return {
+    props: {
+      quote: data,
+      newsResults,
+    },
+  }
 }
 
 // export async function getServerSideProps() {
