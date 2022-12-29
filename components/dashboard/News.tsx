@@ -1,6 +1,6 @@
 
 export default function News() {
   return (
-    <div>News</div>
+    <div className="flex-[4]">News</div>
   )
 }

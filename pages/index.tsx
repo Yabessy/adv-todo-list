@@ -36,9 +36,9 @@ const Home: NextPage = () => {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
+      <main className="flex w-full h-screen bg-slate-50">
         <Sidebar />
-        <div>
+        <div className="flex-[18] flex flex-col">
           <Overview />
           <Motivation />
         </div>
