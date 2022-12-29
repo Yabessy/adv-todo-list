@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .green {
+        @apply text-green-400;
+    }
+    .red {
+        @apply text-red-400;
+    }
+
+}

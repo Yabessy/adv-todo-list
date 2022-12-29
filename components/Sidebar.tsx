@@ -1,9 +1,9 @@
 import { HomeIcon,CalendarDaysIcon,RectangleGroupIcon,RectangleStackIcon,UserGroupIcon } from "@heroicons/react/24/outline"
 export default function Sidebar() {
   return (
-    <div className="flex-[1] flex justify-center h-full bg-slate-100">
+    <div className="fixed z-20 flex justify-center h-full bg-white">
       <div className="w-11 h-full flex flex-col items-center">
-        <h1 className="font-bold">Logo</h1>
+        <h1 className="font-medium mt-2">Logo</h1>
         <HomeIcon className="w-6 mt-44 text-black"/>
         <CalendarDaysIcon className="w-6 mt-5 text-black"/>
         <RectangleGroupIcon className="w-6 mt-5 text-black"/>

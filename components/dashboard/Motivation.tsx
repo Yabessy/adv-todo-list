@@ -1,6 +1,8 @@
 
 export default function Motivation() {
   return (
-    <div className="flex-[4]">Motivation</div>
+    <div className="flex-[4]">
+        
+    </div>
   )
 }
